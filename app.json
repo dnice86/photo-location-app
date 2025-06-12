@@ -18,7 +18,8 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSCameraUsageDescription": "This app needs access to camera to take photos with location data.",
-        "NSLocationWhenInUseUsageDescription": "This app needs access to location to tag photos with GPS coordinates."
+        "NSLocationWhenInUseUsageDescription": "This app needs access to location to tag photos with GPS coordinates.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to photo library to save photos."
       }
     },
     "android": {
@@ -30,11 +31,26 @@
         "CAMERA",
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
-        "WRITE_EXTERNAL_STORAGE"
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
       ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Photo Location App to use your location to tag photos with GPS coordinates."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Photo Location App to access your camera to take photos."
+        }
+      ]
+    ]
   }
 }
